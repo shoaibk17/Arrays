@@ -1,0 +1,18 @@
+#Sort an Array using Recursion.
+
+#include <iostream>
+using namespace std;
+
+bool Sorted(int arr[], int n){
+    if(n ==1){
+        return true;
+    }
+    bool restArray = Sorted(arr+1, n-1);
+    return(arr[0]<arr[1] && restArray);
+}
+int main() {
+    int arr[] = {2,4,6,8,11,12,14};
+    std::cout << Sorted(arr,7);
+	// your code goes here
+	return 0;
+}
