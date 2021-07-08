@@ -84,3 +84,44 @@ int main() {
 	// your code goes here
 	return 0;
 }
+
+
+
+
+	Pairsum element find in an ARRAY.(Optimised Solutions)(n)
+	
+	
+#include <iostream>
+using namespace std;
+
+bool PairSum(int arr[], int n, int key){
+   int low = 0;
+   int hgh = n-1;
+   while(low<hgh){
+       if(arr[low] + arr[hgh] == key){
+           cout<<low<<" "<<hgh<<endl;
+           return true;
+       }
+       else if(arr[low] + arr[hgh] > key){
+           hgh--;
+       }
+       else{
+           low++;
+       }
+   }
+   return false;
+}
+
+int main() {
+    int n; std::cin >> n;
+    int arr[n];
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+    int key; cin>>key;
+    
+    std::cout << PairSum(arr, n, key) << std::endl;
+	// your code goes here
+	return 0;
+}
+
