@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+const int N = 1e5+7;
+int A[N];
+int Pf[N];
+
+int main() {
+    int n; std::cin >> n;
+    for(int i =1; i<=n ; i++){
+        cin>>A[i];
+        Pf[i] = Pf[i-1] + A[i];
+    }
+    int q; cin>>q;
+    while(q--){
+        int l, r; cin>>l>>r;
+        std::cout << Pf[r] - Pf[l-1] << std::endl;
+    }
+	return 0;
+}
